@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 25%, #e8ecf1 50%, #dce3eb 75%, #d0d9e3 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 10;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon-wrapper {
+    margin-bottom: 30px;
+}
+
+.wifi-icon {
+    width: 80px;
+    height: 80px;
+    color: #e74c3c;
+    filter: drop-shadow(0 4px 8px rgba(231, 76, 60, 0.3));
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.message {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.info-item:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-label {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 15px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.status-inactive {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.action-box {
+    margin-bottom: 30px;
+}
+
+.help-text {
+    font-size: 14px;
+    color: #95a5a6;
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+}
+
+.contact-btn:active {
+    transform: translateY(-1px);
+}
+
+.footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer p {
+    font-size: 13px;
+    color: #bdc3c7;
+}
+
+/* Floating Shapes Animation */
+.floating-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
+    animation: float1 20s infinite ease-in-out;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    right: -100px;
+    animation: float2 15s infinite ease-in-out;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    left: 20%;
+    animation: float3 18s infinite ease-in-out;
+}
+
+.shape-4 {
+    width: 250px;
+    height: 250px;
+    bottom: 10%;
+    right: 10%;
+    animation: float4 22s infinite ease-in-out;
+}
+
+@keyframes float1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(100px, 100px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-50px, 150px) rotate(240deg);
+    }
+}
+
+@keyframes float2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(-80px, 80px) rotate(120deg);
+    }
+    66% {
+        transform: translate(-120px, -60px) rotate(240deg);
+    }
+}
+
+@keyframes float3 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(120px, -80px) rotate(120deg);
+    }
+    66% {
+        transform: translate(60px, -120px) rotate(240deg);
+    }
+}
+
+@keyframes float4 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(-100px, -100px) rotate(120deg);
+    }
+    66% {
+        transform: translate(50px, -150px) rotate(240deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 40px 30px;
+    }
+    
+    .title {
+        font-size: 26px;
+    }
+    
+    .wifi-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .contact-btn {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+}
